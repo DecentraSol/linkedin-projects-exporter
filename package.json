@@ -1,0 +1,26 @@
+{
+  "name": "linkedin-projects-exporter",
+  "version": "0.0.1",
+  "description": "A nodejs app connecting to LinkedIn API and exporting all projects and jobs. ",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "mocha test/*test.ts"
+  },
+  "keywords": [
+    "LinkedIn-API",
+    "export",
+    "nodejs",
+    "projects",
+    "jobs"
+  ],
+  "author": "Nico Krause",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "simple-oauth2": "^5.0.0",
+    "uuid": "^9.0.0"
+  }
+}
