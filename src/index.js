@@ -11,6 +11,7 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
 
 const port = process.env.PORT || 8000
+
 const credentials = {
   client: {
     id: process.env.CLIENT_ID,
@@ -23,7 +24,6 @@ const credentials = {
   }
 }
 
-
 app.get('/', (req, res) => {
   res.send('Hello World!')
 })
@@ -31,8 +31,9 @@ app.get('/', (req, res) => {
 app.get('/getToken', async (req, res) => {
     const authorizationCode = process.env.AUTHORIZATION_CODE;  
     const client = new AuthorizationCode(credentials);
-    await getAccessToken(client,authorizationCode,"http://www.decentrasol.netwwork")
-    res.send('res')
+    const res = await getAccessToken(credentials)
+    // await getAccessToken(client,authorizationCode,"http://www.decentrasol.netwwork")
+    res.send('res',res)
 })
 
 /**
