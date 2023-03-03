@@ -15,7 +15,7 @@ const getAccessToken = async (credentials) => {
     //https://learn.microsoft.com/en-us/linkedin/shared/authentication/client-credentials-flow?context=linkedin%2Fconsumer%2Fcontext
      const accessToken = await axios({
             method: 'POST',
-            url: `https://www.linkedin.com/oauth/v2/accessToken?redirect_uri=https://www.decentrasol.network&grant_type=authorization_code&code=${process.env.AUTHORIZATION_CODE}&client_id=${credentials.client.id}&client_secret=${credentials.client.secret}`
+            url: `https://www.linkedin.com/oauth/v2/accessToken?redirect_uri=${process.env.REDIRECT_URL}&grant_type=authorization_code&code=${process.env.AUTHORIZATION_CODE}&client_id=${credentials.client.id}&client_secret=${credentials.client.secret}`
       });
 
     return accessToken
