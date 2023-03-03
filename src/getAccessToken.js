@@ -15,12 +15,7 @@ const getAccessToken = async (credentials) => {
     //https://learn.microsoft.com/en-us/linkedin/shared/authentication/client-credentials-flow?context=linkedin%2Fconsumer%2Fcontext
      const accessToken = await axios({
             method: 'POST',
-            url: 'https://www.linkedin.com/oauth/v2/accessToken',
-            data: {
-                grant_type:'client_credentials',
-                client_id: credentials.client.id,
-                client_secret: credentials.client.secret
-            }
+            url: `https://www.linkedin.com/oauth/v2/accessToken?grant_type=client_credentials&client_id=${credentials.client.id}&client_secret=${credentials.client.secret}`
       });
 
     return accessToken
