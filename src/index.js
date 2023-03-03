@@ -31,7 +31,7 @@ app.get('/', (req, res) => {
 app.get('/getToken', async (req, res) => {
     const authorizationCode = process.env.AUTHORIZATION_CODE;  
     const client = new AuthorizationCode(credentials);
-    const res = await getAccessToken(credentials)
+    const response = await getAccessToken(credentials)
     // const response = await getAccessToken(client,authorizationCode,"http://www.decentrasol.netwwork")
 
     //TODO FIX error: 'access_denied', 'This application is not allowed to create application tokens'
