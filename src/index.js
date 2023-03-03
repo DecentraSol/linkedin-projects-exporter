@@ -50,7 +50,7 @@ app.get('/linkedin', (req, res) => {
 app.get('/export', async (req, res) => {
     const client = new AuthorizationCode(credentials);
     const authorizationUri = await linkedInExport(client)
-    res.send('Now getting authorization uri and redicting to it', authorizationUri)
+    console.log('Now getting authorization uri and redicting to it', authorizationUri)
     res.redirect(authorizationUri)
 })
 
