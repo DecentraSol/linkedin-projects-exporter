@@ -43,12 +43,15 @@ app.get('/getToken', async (req, res) => {
 /**
  * Callback from LinkedIn after we called /export
  */
-app.get('/linkedin', (req, res) => {
+app.get('/linkedin', async (req, res) => {
 	console.log(req)
-    let code = req.query.code;
+    let authorizationCode = req.query.code;
     let uuid = req.query.status
     //TODO compore uuid with generated uuid 
-    res.send('Data Received: ' + code)
+    // const authorizationCode = process.env.AUTHORIZATION_CODE;  
+    const client = new AuthorizationCode(credentials);
+    const res = await getAccessToken(credentials,authorizationCode)
+    res.send('Data Received: ' + res)
 })
 
 app.get('/export', async (req, res) => {
