@@ -40,13 +40,15 @@ app.get('/getToken', async (req, res) => {
  */
 app.get('/linkedin', (req, res) => {
 	console.log(req)
-    let data = req.body;
-    res.send('Data Received: ' + JSON.stringify(data))
+    let code = req.query.code;
+    let uuid = req.query.status
+    //TODO compore uuid with generated uuid 
+    res.send('Data Received: ' + code)
 })
 
 app.get('/export', async (req, res) => {
     const client = new AuthorizationCode(credentials);
-    const {authorizationUri} = await linkedInExport(client)
+    const authorizationUri = await linkedInExport(client)
     res.send('Now getting authorization uri and redicting to it', authorizationUri)
     res.redirect(authorizationUri)
 })
