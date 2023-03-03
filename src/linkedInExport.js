@@ -3,7 +3,7 @@ import {v4} from 'uuid';
 const linkedInExport = (client) => {
   // Set up the OAuth2 authorization URL
   const authorizationUri =  client.authorizeURL({
-    redirect_uri: process.env.REDIRECT_URL,
+    redirect_uri: encodeURI(process.env.REDIRECT_URL),
     //scope: ['r_liteprofile', 'r_emailaddress', 'w_member_social'],
     scope: ['r_liteprofile', 'r_emailaddress'],
     state: v4()

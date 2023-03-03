@@ -50,8 +50,8 @@ app.get('/linkedin', async (req, res) => {
     //TODO compore uuid with generated uuid 
     // const authorizationCode = process.env.AUTHORIZATION_CODE;  
     const client = new AuthorizationCode(credentials);
-    const res = await getAccessToken(credentials,authorizationCode)
-    res.send('Data Received: ' + res)
+    const response = await getAccessToken(credentials,authorizationCode)
+    res.send('Data Received: ' +response )
 })
 
 app.get('/export', async (req, res) => {

@@ -15,7 +15,10 @@ const getAccessToken = async (credentials,authorizationCode) => {
     //https://learn.microsoft.com/en-us/linkedin/shared/authentication/client-credentials-flow?context=linkedin%2Fconsumer%2Fcontext
      const accessToken = await axios({
             method: 'POST',
-            url: `https://www.linkedin.com/oauth/v2/accessToken?redirect_uri=${process.env.REDIRECT_URL}&grant_type=authorization_code&code=${authorizationCode}&client_id=${credentials.client.id}&client_secret=${credentials.client.secret}`
+            headers: {
+             "Content-Type": "application/x-www-form-urlencoded"
+            },
+            url: `https://www.linkedin.com/oauth/v2/accessToken?redirect_uri=${encodeURI(process.env.REDIRECT_URL)}&grant_type=authorization_code&code=${encodeURI(authorizationCode)}&client_id=${credentials.client.id}&client_secret=${credentials.client.secret}`
       });
 
     return accessToken
