@@ -44,7 +44,6 @@ app.get('/getToken', async (req, res) => {
  * Callback from LinkedIn after we called /export
  */
 app.get('/linkedin', async (req, res) => {
-	console.log(req)
     let authorizationCode = req.query.code;
     let uuid = req.query.status
     //TODO compore uuid with generated uuid 
