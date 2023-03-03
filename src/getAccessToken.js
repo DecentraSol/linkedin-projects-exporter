@@ -1,4 +1,5 @@
 // import {AuthorizationCode} from 'simple-oauth2';
+import axios from 'axios'
 import * as dotenv from 'dotenv' 
 dotenv.config()
 
@@ -11,7 +12,7 @@ const getAccessToken = async (credentials) => {
 //     console.log("getting token with tokenParams",tokenParams)
 //     const accessToken = await client.getToken(tokenParams)
 //     console.log('Access token:', accessToken.token.access_token);
-
+    //https://learn.microsoft.com/en-us/linkedin/shared/authentication/client-credentials-flow?context=linkedin%2Fconsumer%2Fcontext
      const accessToken = await axios({
             method: 'POST',
             url: 'https://www.linkedin.com/oauth/v2/accessToken',
