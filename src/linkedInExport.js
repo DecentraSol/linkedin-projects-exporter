@@ -24,7 +24,8 @@ const linkedInExport = () => {
   // Set up the OAuth2 authorization URL
   const authorizationUri =  client.authorizeURL({
     redirect_uri: process.env.REDIRECT_URL,
-    scope: ['r_liteprofile', 'r_emailaddress', 'w_member_social'],
+    //scope: ['r_liteprofile', 'r_emailaddress', 'w_member_social'],
+    scope: ['r_liteprofile', 'r_emailaddress'],
     state: v4()
   });
 
