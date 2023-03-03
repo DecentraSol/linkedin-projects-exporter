@@ -31,12 +31,13 @@ app.get('/', (req, res) => {
 app.get('/getToken', async (req, res) => {
     const authorizationCode = process.env.AUTHORIZATION_CODE;  
     const client = new AuthorizationCode(credentials);
-    const res = await getAccessToken(credentials)
+    // const res = await getAccessToken(credentials)
+    const response = await getAccessToken(client,authorizationCode,"http://www.decentrasol.netwwork")
 
     //TODO FIX error: 'access_denied', 'This application is not allowed to create application tokens'
     //TODO see https://stackoverflow.com/questions/50626514/linkedin-this-application-is-not-allowed-to-create-application-tokens
-    // await getAccessToken(client,authorizationCode,"http://www.decentrasol.netwwork")
-    res.send('res',res)
+  
+    res.send('response',response)
 })
 
 /**
