@@ -1,8 +1,14 @@
 import axios from 'axios'
 
+const tokenJSON = {
+        "access_token":"",
+        "expires_in":5183999,
+        "scope":"r_emailaddress,r_liteprofile"
+}
+
 const getProjectsFromAPI = async (access_token) => {
 
-    const headers = { 'Authorization': `Bearer ${access_token}` };
+    const headers = { 'Authorization': `Bearer ${tokenJSON.access_token}` };
 
     // Set up the API endpoint for jobs and projects
     const jobs_endpoint = 'https://api.linkedin.com/v2/jobs';

@@ -2,6 +2,7 @@ import express from 'express'
 import bodyParser from 'body-parser'
 import linkedInExport from './linkedInExport.js'
 import getAccessToken from './getAccessToken.js' 
+import getProjectsFromAPI from './getProjectsFromAPI.js' 
 import {AuthorizationCode} from 'simple-oauth2';
 import * as dotenv from 'dotenv'
 dotenv.config()
@@ -26,6 +27,11 @@ const credentials = {
 
 app.get('/', (req, res) => {
   res.send('Hello World!')
+})
+
+app.get('/getProjects', async (req, res) => {
+    await getProjectsFromAPI()
+    res.send('got projects...')
 })
 
 app.get('/getToken', async (req, res) => {

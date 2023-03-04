@@ -16,6 +16,17 @@ const getAccessToken = async (credentials,authorizationCode) => {
      
     //https://learn.microsoft.com/en-us/linkedin/shared/authentication/authorization-code-flow?tabs=cURL2
 
+//    redirect_uri=http://orbit-db-pinner.decentrasol.network:8000/linkedin&grant_type=authorization_code&code=AQRnAEeGtNpEqFj2l5Bo5pPkj9VXkrBTwx2DXKtV0BqrfuNVd0JrITO5Oqy4oSpYXODGaTPMTPXLMIxrIj2SL_5PB4X_BIvAyhW5LqqwZtGQnYzmw3rtWExIe5t_OxQ6AlEl_mJKrCDgc1fatRAPbR5ka5FvKPEAqEHgxZbLyW3qCSol3zqHbRJrvLOOgbYigx0KTUcM_LVnwYkOtEg&client_id=86j0rqbkihw3f3&client_secret=veL9Uo1zp8NBS13w
+
+/*
+    curl --location --request POST 'https://www.linkedin.com/oauth/v2/accessToken' \
+    --header 'Content-Type: application/x-www-form-urlencoded' \
+    --data-urlencode 'grant_type=authorization_code' \
+    --data-urlencode 'code=AQRCRrH6PqtaO3H4PbIToeGoXpFGGQbilqnR3ydgumo_vlGyK0x8TtJQX-AI7uWuucITShIZc8neyNZhojDxLtytZz5Vu96-hqCnWaTBsFcY4iXtXA2ztrQyfOO9qae2VhbEh6z1UPr4DF8pEJ_sv11LZ1ixenAK4ryKFMvUYqkGuCrWuy1aasJz1P6iLa-hesnKVcXEIMzPr45RlfQ' \
+    --data-urlencode 'client_id=86j0rqbkihw3f3' \
+    --data-urlencode 'client_secret=veL9Uo1zp8NBS13w' \
+    --data-urlencode 'redirect_uri=http://orbit-db-pinner.decentrasol.network:8000/linkedin'
+*/
     const accessToken = await axios({
             method: 'POST',
             headers: {
