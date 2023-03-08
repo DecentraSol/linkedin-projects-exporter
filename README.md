@@ -1,10 +1,11 @@
 # linkedin-projects-exporter
 
-This is a NodeJS project which is connecting to the LinkedInAPI, generates an AccessCode and with this an AccessToken.
-It is possible to retrieve the personal information such as my name. Obviously this is not much and I 
-found out it is necessary to became LinkedIn Partner to get more information from the API.
+This is a NodeJS project which is connecting to the LinkedIn-API. It generates an AccessCode and with this another AccessToken.
 
-You maybe read this blog and try and let me know if that still works - https://www.jcchouinard.com/linkedin-api/
+It is possible to retrieve the personal information such as my name.  
+Obviously this is not much and I found out it is necessary to becoe LinkedIn Partner to get more information from the API.
+
+You maybe read this blog and try and let me know if that might work in a better way - https://www.jcchouinard.com/linkedin-api/
 
 - clone repo
 - npm i
